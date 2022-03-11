@@ -1,0 +1,35 @@
+CQRS
+--------------------------
+--------------------------
+Escalabilidad 
+
+Performance 
+
+Simplicidad
+
+-------------------------------------
+
+Query -> Operaciones de alto nivel que consultan datos. Retorna datos.
+
+Command -> Operaciones de alto nivel que modifican datos.
+
+-------------------------------------
+
+EVENT-SOURCING 
+------------------------------------
+-----------------------------------
+
+Define que todos los cambios realizados a una entidad deben almacenados en una secuencia inmutable de eventos.
+
+Event Store -> Registra todos los eventos.
+
+Es posible recrear el estado del objeto entidad.
+
+Mejora el procesamiento de escritura.
+
+No existen operaciones para eliminar o actualizar Events.
+
+------------------------------------------------------
+
+
+--------------------------------------------

@@ -1,0 +1,118 @@
+docker version
+-------------------------
+CREAR IMAGEN
+
+
+
+--------------------------
+
+BORRAR IMAGEN
+
+docker rmi -f [ID_IMAGE]
+
+-f -> Forzar
+
+-------------------------
+
+CREAR CONTENEDOR
+
+docker run hello-world -> docker create [nombre_imagen]
+                       -> docker start  [ID_CONTAINER]   
+
+---------------------------
+
+IMPRIMIR EL OUTPUT DEL RESULTADO DE LA EJECICIÓN DEL CONTENEDOR
+
+docker start -a [ID_CONTAINER]
+
+------------------------
+
+LISTAR CONTENEDORES
+
+docker ps 
+
+docker ps --all
+
+-----------------------
+
+PARAR CONTENEDOR
+
+docker stop [ID_CONTAINER]
+
+docker kill [ID_CONTAINER] -> Elimina el proceso automaticamente
+
+----------------------------
+
+BORRAR CONTENEDOR 
+
+docker rm --force [ID_CONTAINER]
+
+---------------------------------
+
+ELIMINAR CONTENEDORES DETENIDOS
+
+docker system prune
+
+----------------------------------
+
+ACCEDER AL BASH DEL CONTENEDOR
+
+Ejemplo: 
+     
+      docker pull redis
+
+      docker run -d -p 6379:6379 --name redis_container redis   
+
+       -d : imprime el log
+       -p : mapeo de puertos
+       --name : nombre del container
+
+       docker ps
+
+docker exec -it [CONTAINER_ID] [command]
+
+     -i : agregarnos al bash principal de linux
+     -t : cada línea se ejecuta en el bash de linux 
+     command : programa que va a ejecutar el bash
+
+
+docker exec -it redis_container sh     
+
+redis-cli
+ping
+set nombre Bladi
+get nombre
+exit
+exit
+
+------------------------------------------
+
+ACCEDER AL BASH AL EJECUTAR EL CONTAINER
+
+docker run -it [IMAGE] sh
+
+---------------------------------------
+
+VISUALIZAR REDES VIRTUALES
+
+ docker network ls
+
+---------------------------------
+
+CREAR RED
+
+docker network create --attachable -d bridge [nombre_red]
+
+----------------------------------
+
+DOCKER-COMPOSE SHOW VERSION
+
+docker-compose --version
+
+-------------------------------------
+
+LEVANTAR COMPOSE
+
+docker-compose up -d
+
+----------------------------------------
