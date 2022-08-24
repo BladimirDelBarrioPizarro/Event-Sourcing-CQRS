@@ -1,10 +1,16 @@
 docker version
--------------------------
+-----------------------------------
 CREAR IMAGEN
 
+docker build -t atareao/chiquito:latest .
 
+-------------------------------------
 
---------------------------
+LISTAR DIRECTORIOS DE UN CONTAINER
+
+docker run [nombre_contenedor] ls
+
+------------------------------------
 
 BORRAR IMAGEN
 
@@ -19,13 +25,13 @@ CREAR CONTENEDOR
 docker run hello-world -> docker create [nombre_imagen]
                        -> docker start  [ID_CONTAINER]   
 
----------------------------
+------------------------------------------------------------------
 
 IMPRIMIR EL OUTPUT DEL RESULTADO DE LA EJECUCIÓN DEL CONTENEDOR
 
 docker start -a [ID_CONTAINER]
 
-------------------------
+--------------------------------------------------------------------
 
 LISTAR CONTENEDORES
 
@@ -37,7 +43,7 @@ docker ps --all
 
 PARAR CONTENEDOR
 
-docker stop [ID_CONTAINER]
+docker stop [ID_CONTAINER] -> Finaliza los procesos y guarda logs
 
 docker kill [ID_CONTAINER] -> Elimina el proceso automaticamente
 
@@ -49,7 +55,7 @@ docker rm --force [ID_CONTAINER]
 
 ---------------------------------
 
-ELIMINAR CONTENEDORES DETENIDOS
+ELIMINAR CONTENEDORES DETENIDOS, NETWORKS NO USADAS, DANGLING IMAGES
 
 docker system prune
 
@@ -79,9 +85,9 @@ docker exec -it [CONTAINER_ID] [command]
 docker exec -it redis_container sh     
 
 redis-cli
-ping
-set nombre Bladi
-get nombre
+ping -> Nos responde PONG
+set nombre Bladi  -> creamos una clave CON SU VALOR
+get nombre ->  Responde Bladi
 exit
 exit
 
@@ -90,6 +96,8 @@ exit
 ACCEDER AL BASH AL EJECUTAR EL CONTAINER
 
 docker run -it [IMAGE] sh
+
+/# ls
 
 ---------------------------------------
 

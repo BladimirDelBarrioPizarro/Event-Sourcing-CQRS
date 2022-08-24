@@ -1,35 +1,38 @@
-CQRS
+CQRS (Command Query Responsability Segregation)
 --------------------------
+BENEFICIOS
+
+Escalabilidad -> Las querys pueden separarse y ejecutarse en su propio ambiente independientemente de las operaciones comando.
+
+Performance -> Podemos añadir optimizaciones que no serían posibles con otro modelo.
+
+Simplicidad -> Es más sencillo de mantener.
 --------------------------
-Escalabilidad 
-
-Performance 
-
-Simplicidad
-
 -------------------------------------
+
+OPERACIONES
 
 Query -> Operaciones de alto nivel que consultan datos. Retorna datos.
 
-Command -> Operaciones de alto nivel que modifican datos.
+Command -> Operaciones de alto nivel que modifican datos. No retornan datos. En la práctica pueden retornar flags, errores o ids
 
 -------------------------------------
 
 EVENT-SOURCING 
 ------------------------------------
+Todos los cambios realizados a una entidad deben ser almacenados en una secuencia inmutable de eventos.
 -----------------------------------
 
-Define que todos los cambios realizados a una entidad deben almacenados en una secuencia inmutable de eventos.
+Event Store -> Registra todos los eventos sobre las entidades del sistema.
 
-Event Store -> Registra todos los eventos.
+BENEFICIOS DE EVENT STORE
+
+Contiene registros de todos los eventos.
 
 Es posible recrear el estado del objeto entidad.
 
 Mejora el procesamiento de escritura.
 
-No existen operaciones para eliminar o actualizar Events.
+NO EXISTEN OPERACIONES PARA ELIMINAR O ACTUALIZAR Events.
 
 ------------------------------------------------------
-
-
---------------------------------------------
