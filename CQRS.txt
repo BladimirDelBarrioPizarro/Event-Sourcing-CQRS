@@ -36,3 +36,16 @@ Mejora el procesamiento de escritura.
 NO EXISTEN OPERACIONES PARA ELIMINAR O ACTUALIZAR Events.
 
 ------------------------------------------------------
+
+EVENT-BUS -> APACHE KAFKA
+
+Plataforma de streaming de eventos.
+
+ZOOKEEPER
+
+Cluster de instancias de Kafka.
+Selecciona cual debe ser instanciado.
+
+
+------------------------------------------------------
+
