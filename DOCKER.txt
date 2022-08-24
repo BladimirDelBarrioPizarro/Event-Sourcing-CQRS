@@ -21,7 +21,7 @@ docker run hello-world -> docker create [nombre_imagen]
 
 ---------------------------
 
-IMPRIMIR EL OUTPUT DEL RESULTADO DE LA EJECICIÓN DEL CONTENEDOR
+IMPRIMIR EL OUTPUT DEL RESULTADO DE LA EJECUCIÓN DEL CONTENEDOR
 
 docker start -a [ID_CONTAINER]
 
