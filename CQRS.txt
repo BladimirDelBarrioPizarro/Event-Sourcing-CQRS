@@ -73,4 +73,14 @@ Messages en CQRS
             Los eventos se asignan a clases con nombres en pasado.
 
 - Queries ->
+ -------------------------------------------------------------
+
+ PATRÓN MEDIATOR <CommandDispatcher>
+
+ Nos ayuda a comunicar distintos objetos enviándose mensajes entre si.
+ Para ello definimos la interfaz CommandDispatcher (cqrs.core) y su implementación AccountCommandDispatcher (account.cmd).
+
+ registerHandler -> Registro del manejador.
+ send -> método para enviar el command de un componente a otro.
+
 

@@ -6,9 +6,11 @@ import com.banking.account.common.events.AccountOpenedEvent;
 import com.banking.account.common.events.DepositedEvent;
 import com.banking.account.common.events.RemovedEvent;
 import com.banking.cqrs.core.domain.AggregateRoot;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
 import java.sql.Timestamp;
 
+@Getter
 @NoArgsConstructor
 public class AccountAggregate extends AggregateRoot {
     // Si la cuenta está activa
