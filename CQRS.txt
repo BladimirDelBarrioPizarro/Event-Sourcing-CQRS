@@ -49,3 +49,16 @@ Selecciona cual debe ser instanciado.
 
 ------------------------------------------------------
 
+Messages en CQRS
+
+- Commands -> Combinación de un Expressed intent.
+              Descripción de una actividad que deseamos realizar.
+              Se definen como un verbo imperativo.
+              Objeto de tipo Message con su identificador único.
+
+- Events -> Describe una actividad que sucedió.
+            Los aggregate disparan eventos. (Entidades que mantienen el estado).
+            Los eventos se asignan a clases con nombres en pasado.
+
+- Queries ->
+
