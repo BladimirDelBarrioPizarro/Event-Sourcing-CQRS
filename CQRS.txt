@@ -35,6 +35,18 @@ Mejora el procesamiento de escritura.
 
 NO EXISTEN OPERACIONES PARA ELIMINAR O ACTUALIZAR Events.
 
+En si es una base de datos que almacena los eventos inmutables secuencialmente.
+
+Solo debe ser capaz de almacenar eventos.
+
+Cada evento representa un estado de un aggregate en un determinado punto de tiempo.
+
+Son agregados cronológicamente
+
+El estado de un aggregate puede ser recreado ejecutando el event store.
+
+Implementa Optimist Concurrency Control.
+
 ------------------------------------------------------
 
 EVENT-BUS -> APACHE KAFKA
