@@ -5,6 +5,7 @@ import lombok.Data;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
 
+import java.sql.Timestamp;
 import java.util.Date;
 
 @Data
@@ -13,7 +14,7 @@ import java.util.Date;
 public class EventModel {
     @Id
     private String id;
-    private Date timeStamp;
+    private Timestamp timeStamp;
     private String aggregateIdentifier;
     private String aggregateType;
     private int version;
