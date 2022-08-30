@@ -1,3 +1,21 @@
+PRODUCER -> Tipo de cliente de Kafka que se encarga de publicar los mensajes. Envía mensajes a los topics.
+
+CONSUMER ->  Tipo de cliente de Kafka que se encarga de consumir los mensajes. Subscritos a topics.
+
+GRUPO DE CONSUMIDORES : Agrupación de uno o más consumidores que trabajan para leer de un topic en base al cumplimiento de algún objetivo / funcionalidad concreta
+
+KAFKA CLUSTER -> Conjunto de brokers y su balanceador (zookeeper).
+
+BROKER -> Procesan los mensajes en base a la determinación de zookeeper. No tienen estado. Conjunto de topics.
+
+ZOOKEEPER -> Administrador de brokers
+
+TOPIC -> Divididos en particiones replicadas en todos los brokers. Canal de comunicación donde el mensaje hace su stream.
+
+
+
+
+-------------------------------------------------------------------------------------------
 Configuración account.query
 
  kafka:
@@ -14,3 +32,5 @@ Configuración account.query
            json:
              trusted:
                packages: '*'
+
+---------------------------------------------------------------------------------------

@@ -18,14 +18,14 @@ public class AccountCommandHandler implements CommandHandler {
     }
 
     @Override
-    public void handle(DepositCommand depositCommand) {
+    public void handle(DepositAccountCommand depositCommand) {
        var aggregate = eventSourcingHandler.getById(depositCommand.getId());
        aggregate.depositAmount(depositCommand.getAmount());
        eventSourcingHandler.save(aggregate);
     }
 
     @Override
-    public void handle(RemoveCommand removeCommand) {
+    public void handle(RemoveAccountCommand removeCommand) {
         var aggregate = eventSourcingHandler.getById(removeCommand.getId());
         if(removeCommand.getAmount() > aggregate.getBalance()){
             throw new IllegalStateException(" -- ERROR insuficientes fondos, no se puede retirar dinero");
