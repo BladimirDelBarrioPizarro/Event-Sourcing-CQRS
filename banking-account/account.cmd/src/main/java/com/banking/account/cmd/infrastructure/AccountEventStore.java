@@ -7,6 +7,7 @@ import com.banking.cqrs.core.events.EventModel;
 import com.banking.cqrs.core.exceptions.AggregateNotFoundException;
 import com.banking.cqrs.core.exceptions.ConcurrencyException;
 import com.banking.cqrs.core.infrastructure.EventStore;
+import com.banking.cqrs.core.producers.EventProducer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -19,6 +20,9 @@ public class AccountEventStore implements EventStore {
 
     @Autowired
     private EventStoreRepository eventStoreRepository;
+
+    @Autowired
+    private EventProducer eventProducer;
 
     @Override
     public void saveEvents(String aggregateId, Iterable<BaseEvent> baseEvents, int expectedVersion) {
@@ -41,8 +45,9 @@ public class AccountEventStore implements EventStore {
                     .baseEvent(event)
                     .build();
             var persistedEvent = eventStoreRepository.save(eventModel);
-            if(persistedEvent != null){
+            if(!persistedEvent.getId().isEmpty()){
                 // Producir un evento para Kafka
+                eventProducer.produce(event.getClass().getSimpleName(),event);
             }
         }
     }
