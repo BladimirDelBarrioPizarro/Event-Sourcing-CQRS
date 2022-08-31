@@ -34,3 +34,13 @@ Configuración account.query
                packages: '*'
 
 ---------------------------------------------------------------------------------------
+
+Domain Driven Design (DDD)
+
+Modelado de sofware que coincida con el dominio del negocio. Se enfoca en el core o kernel.
+Llama a los problemas domain
+Separa los problemas en Bounded Context(Área de problema independiente,traza limites entre problemas, cada bounded context tendra una solución que eventualmente es un microservicio).
+
+----------------------------------------------------------------------------------------
+
+
