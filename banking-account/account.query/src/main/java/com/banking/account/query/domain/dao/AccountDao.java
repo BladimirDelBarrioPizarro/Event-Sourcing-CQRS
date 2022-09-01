@@ -8,6 +8,6 @@ import java.util.List;
 
 public interface AccountDao extends CrudRepository<BankAccount, String> {
     BankAccount findByAccountHolder(String accountHolder);
-    List<BaseEntity> findByBalanceGreatherThan(double balance);
+    List<BaseEntity> findByBalanceGreaterThan(double balance);
     List<BaseEntity> findByBalanceLessThan(double balance);
 }

@@ -8,6 +8,9 @@ import org.springframework.kafka.support.Acknowledgment;
 import org.springframework.messaging.handler.annotation.Payload;
 
 public interface EventConsumer {
+    /*
+    * Acknowledgment -> Para indicar que el mensaje ya ha sido procesado
+    * */
     void consume(@Payload AccountOpenedEvent event, Acknowledgment ack);
     void consume(@Payload AccountClosedEvent event, Acknowledgment ack);
     void consume(@Payload DepositedEvent event, Acknowledgment ack);
