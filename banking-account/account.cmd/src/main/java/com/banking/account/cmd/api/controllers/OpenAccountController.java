@@ -26,7 +26,7 @@ public class OpenAccountController {
         openAccountCommand.setId(id);
        try{
            commandDispatcher.send(openAccountCommand);
-           return new ResponseEntity<>(new OpenAccountResponse("Cuenta creada exitosamente {}",id), HttpStatus.CREATED);
+           return new ResponseEntity<>(new OpenAccountResponse("Cuenta creada exitosamente",id), HttpStatus.CREATED);
        } catch (Exception ex){
          log.error(ex.toString());
          return new ResponseEntity<>(new BaseResponse(ex.toString()),HttpStatus.BAD_REQUEST);
