@@ -1,7 +1,6 @@
 package com.banking.account.cmd.api.controllers;
 
 import com.banking.account.cmd.api.command.CloseAccountCommand;
-import com.banking.account.cmd.api.command.RemoveAccountCommand;
 import com.banking.account.common.dto.BaseResponse;
 import com.banking.cqrs.core.infrastructure.CommandDispatcher;
 import lombok.extern.slf4j.Slf4j;
